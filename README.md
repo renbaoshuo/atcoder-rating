@@ -14,6 +14,15 @@ Just insert the link into your website as an image, like this: `<img src="https:
 
 Do not forget to replace the default configuration with your own!
 
+---
+
+Parameter list:
+
+| Name     | Value                 | Required | Description                              |
+| -------- | --------------------- | -------- | ---------------------------------------- |
+| username | string                | Yes      | Your AtCoder username                    |
+| type     | `algo` or `heuristic` | No       | The type of the badge, default is `algo` |
+
 ## Author
 
 **AtCoder Rating Badge** © [Baoshuo](https://github.com/renbaoshuo), Released under the [MIT](./LICENSE) License.<br>
