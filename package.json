@@ -1,0 +1,13 @@
+{
+  "name": "atcoder-rating",
+  "author": "Baoshuo <i@baoshuo.ren>",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/node": "^1.14.0",
+    "cheerio": "^1.0.0-rc.10",
+    "node-fetch": "2"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
