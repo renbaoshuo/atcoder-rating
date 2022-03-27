@@ -43,7 +43,7 @@ export default (request: VercelRequest, response: VercelResponse) => {
             const text = $('#main-container > div.row > div.col-md-3.col-sm-12 > h3 > b').text();
 
             fetch(
-                `https://img.shields.io/badge/${username}-${text}  ${rating}-${color}.svg?longCache=true&style=for-the-badge&link=https://atcoder.jp/users/${username}&logo=${encodeURIComponent(
+                `https://img.shields.io/badge/${username.replace(/-/g, '--').replace(/_/g, '__')}-${text}  ${rating}-${color}.svg?longCache=true&style=for-the-badge&link=https://atcoder.jp/users/${username}&logo=${encodeURIComponent(
                     logo
                 )}`
             )
