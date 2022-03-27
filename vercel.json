@@ -1,0 +1,15 @@
+{
+    "routes": [
+        {
+            "src": "/rating",
+            "dest": "/api/rating.ts"
+        },
+        {
+            "src": "/",
+            "status": 302,
+            "headers": {
+                "Location": "https://github.com/renbaoshuo/atcoder-rating"
+            }
+        }
+    ]
+}
