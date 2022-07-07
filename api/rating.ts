@@ -43,13 +43,12 @@ async function fetchData(username: string, type: string): Promise<UserRatingInfo
     const rating = Number(ratingEl.innerText.trim());
     const text = textEl?.innerText.trim() || 'N/A';
 
-    return { rating, text };
+    return { rating, text: `${text}  ${rating}` };
 }
 
-async function getBadgeImage(username: string | null, data: UserRatingInfo, style: string) {
+async function getBadgeImage(username: string, data: UserRatingInfo, style: string) {
     const color = getRatingColor(data.rating);
-    const escapedUsername = escape(username || 'baoshuo');
-    const escapedRating = escape(data.rating.toString());
+    const escapedUsername = escape(username);
     const escapedRatingText = escape(data.text);
 
     const params = new URLSearchParams({
@@ -57,18 +56,14 @@ async function getBadgeImage(username: string | null, data: UserRatingInfo, styl
         style,
         logo: encodeURIComponent(logo),
         link: `https://atcoder.jp/users/${username}`,
-    });
+    }).toString();
 
-    try {
-        const res = await fetch(
-            `https://img.shields.io/badge/${escapedUsername}-${escapedRatingText}  ${escapedRating}-${color}.svg?${params.toString()}`
-        );
+    const res = await fetch(
+        `https://img.shields.io/badge/${escapedUsername}-${escapedRatingText}-${color}.svg?${params}`
+    );
 
-        if (!res.ok) return 'error';
-        return await res.text();
-    } catch (e) {
-        return 'error';
-    }
+    if (!res.ok) throw 'error';
+    return await res.text();
 }
 
 export default async (request: VercelRequest, response: VercelResponse) => {
