@@ -54,9 +54,11 @@ async function getBadgeImage(username: string, data: UserRatingInfo, style: stri
     const params = new URLSearchParams({
         longCache: 'true',
         style,
-        logo: encodeURIComponent(logo),
+        logo,
         link: `https://atcoder.jp/users/${username}`,
     }).toString();
+
+    console.log(params);
 
     const res = await fetch(
         `https://img.shields.io/badge/${escapedUsername}-${escapedRatingText}-${color}.svg?${params}`
