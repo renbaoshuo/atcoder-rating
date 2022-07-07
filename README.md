@@ -18,10 +18,11 @@ Do not forget to replace the default configuration with your own!
 
 Parameter list:
 
-| Name     | Value                 | Required | Description                              |
-| -------- | --------------------- | -------- | ---------------------------------------- |
-| username | string                | Yes      | Your AtCoder username                    |
-| type     | `algo` or `heuristic` | No       | The type of the badge, default is `algo` |
+| Name     | Value                                           | Required | Description                                        |
+| -------- | ----------------------------------------------- | -------- | -------------------------------------------------- |
+| username | string                                          | Yes      | Your AtCoder username                              |
+| type     | `algo` or `heuristic`                           | No       | The type of the badge, default is `algo`           |
+| style    | [shields.io styles](https://shields.io/#styles) | No       | The style of the badge, default is `for-the-badge` |
 
 ## Author
 
