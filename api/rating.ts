@@ -78,7 +78,11 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     const data = await fetchData(username as string, type as string).catch(() => ({ rating: 0, text: 'N/A' }));
     getBadgeImage(username as string, data, style as string)
         .then((data) => {
-            response.status(200).setHeader('Content-Type', 'image/svg+xml;charset=utf-8').send(data);
+            response
+                .status(200)
+                .setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
+                .setHeader('Cache-Control', 'public, max-age=43200') // 43200s（12h） cache
+                .send(data);
         })
         .catch(() => {
             response.status(500).send('error');
