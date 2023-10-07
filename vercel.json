@@ -8,7 +8,7 @@
             "src": "/",
             "status": 302,
             "headers": {
-                "Location": "https://github.com/renbaoshuo/atcoder-rating"
+                "Location": "https://baoshuo.ren/services/atcoder-rating-badge/"
             }
         }
     ]
