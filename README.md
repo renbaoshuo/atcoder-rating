@@ -4,11 +4,9 @@
 
 ![](https://atrating.baoshuo.dev/rating?username=baoshuo)
 
-## Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frenbaoshuo%2Fatcoder-rating)
-
 ## Usage
+
+> **Note**: You can use our [AtCoder Rating Badge Generator](https://baoshuo.ren/services/atcoder-rating-badge/#get-your-own-badge-now) to get your badge easily!
 
 Just insert the link into your website as an image, like this: `<img src="https://atrating.baoshuo.dev/rating?username=baoshuo">`
 
@@ -23,6 +21,10 @@ Parameter list:
 | username | string                                          | Yes      | Your AtCoder username                              |
 | type     | `algo` or `heuristic`                           | No       | The type of the badge, default is `algo`           |
 | style    | [shields.io styles](https://shields.io/#styles) | No       | The style of the badge, default is `for-the-badge` |
+
+## Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frenbaoshuo%2Fatcoder-rating)
 
 ## Author
 
