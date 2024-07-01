@@ -28,17 +28,15 @@ function getRatingColor(rating: number) {
 async function fetchData(username: string, type: string): Promise<UserRatingInfo> {
     const res = await fetch(`https://atcoder.jp/users/${username}?contestType=${type}`);
     const html = await res.text();
-    const userRes = await fetch(`https://atcoder.jp/users/${username}`);
-    const userHtml = await userRes.text();
     const document = parse(html);
     const container = document.querySelector('#main-container');
 
     if (!res.ok || !container) return { rating: 0, text: 'N/A' };
 
     const ratingEl = container.querySelector(
-        'table#history tr:nth-child(1) > td:nth-child(5) > span'
+        '#user-nav-tabs + table tr:nth-child(2) > td:nth-child(2) > span'
     );
-    const textEl = parse(userHtml).querySelector('#main-container div.row > div.col-md-3.col-sm-12 > h3 > b');
+    const textEl = document.querySelector('div.row > div.col-md-3.col-sm-12 > h3 > b');
 
     if (!ratingEl) return { rating: 0, text: 'Unrated' };
 
