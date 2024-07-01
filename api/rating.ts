@@ -34,7 +34,7 @@ async function fetchData(username: string, type: string): Promise<UserRatingInfo
     if (!res.ok || !container) return { rating: 0, text: 'N/A' };
 
     const ratingEl = container.querySelector(
-        '#user-nav-tabs + table > tr:nth-child(2) > td:nth-child(2) > span:first-child'
+        '#user-nav-tabs + table tr:nth-child(2) > td:nth-child(2) > span'
     );
     const textEl = document.querySelector('div.row > div.col-md-3.col-sm-12 > h3 > b');
 
